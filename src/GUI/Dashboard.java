@@ -38,6 +38,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel2.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 14));
         jLabel3.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 14));
         jLabel4.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 14));
+          jLabel6.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 14));
     }
 
     /**
@@ -56,9 +57,10 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Dashboard");
+        setTitle("Royal Service Center");
 
         jPanel2.setLayout(new java.awt.BorderLayout());
         getContentPane().add(jPanel2, java.awt.BorderLayout.CENTER);
@@ -111,12 +113,21 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
+        jLabel6.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Job Sheets");
+        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel6MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(604, 604, 604)
+                .addGap(304, 304, 304)
                 .addComponent(jLabel1)
                 .addGap(47, 47, 47)
                 .addComponent(jLabel2)
@@ -124,7 +135,9 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(34, 34, 34)
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 229, Short.MAX_VALUE)
+                .addGap(31, 31, 31)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 423, Short.MAX_VALUE)
                 .addComponent(jLabel5)
                 .addGap(16, 16, 16))
         );
@@ -137,7 +150,8 @@ public class Dashboard extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(jLabel3)
                     .addComponent(jLabel4)
-                    .addComponent(jLabel5))
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
@@ -192,6 +206,15 @@ public class Dashboard extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jLabel5MouseClicked
 
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+        jPanel2.removeAll();
+        JobSheet job = new JobSheet();
+        jPanel2.add(job, BorderLayout.CENTER);
+        SwingUtilities.updateComponentTreeUI(job);
+        resetLabel();
+        jLabel6.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 18));
+    }//GEN-LAST:event_jLabel6MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -212,6 +235,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
