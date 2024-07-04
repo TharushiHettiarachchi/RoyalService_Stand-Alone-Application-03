@@ -6,6 +6,7 @@ package GUI;
 
 import com.formdev.flatlaf.themes.FlatMacLightLaf;
 import java.awt.BorderLayout;
+import java.awt.Font;
 import java.awt.Toolkit;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
@@ -28,6 +29,15 @@ public class Dashboard extends javax.swing.JFrame {
         Dashboard_panel d_panel = new Dashboard_panel();
         jPanel2.add(d_panel, BorderLayout.CENTER);
         SwingUtilities.updateComponentTreeUI(d_panel);
+        resetLabel();
+        jLabel1.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 18));
+    }
+
+    public void resetLabel() {
+        jLabel1.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 14));
+        jLabel2.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 14));
+        jLabel3.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 14));
+        jLabel4.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 14));
     }
 
     /**
@@ -45,6 +55,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Dashboard");
@@ -75,10 +86,30 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Suppliers");
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel3MouseEntered(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Emplyees");
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resource/logout.png"))); // NOI18N
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -93,7 +124,9 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(34, 34, 34)
                 .addComponent(jLabel4)
-                .addContainerGap(265, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 229, Short.MAX_VALUE)
+                .addComponent(jLabel5)
+                .addGap(16, 16, 16))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -103,7 +136,8 @@ public class Dashboard extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(jLabel2)
                     .addComponent(jLabel3)
-                    .addComponent(jLabel4))
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
@@ -117,6 +151,8 @@ public class Dashboard extends javax.swing.JFrame {
         Customer customer = new Customer();
         jPanel2.add(customer, BorderLayout.CENTER);
         SwingUtilities.updateComponentTreeUI(customer);
+        resetLabel();
+        jLabel2.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 18));
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
@@ -124,7 +160,37 @@ public class Dashboard extends javax.swing.JFrame {
         Dashboard_panel d_panel = new Dashboard_panel();
         jPanel2.add(d_panel, BorderLayout.CENTER);
         SwingUtilities.updateComponentTreeUI(d_panel);
+        resetLabel();
+        jLabel1.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 18));
     }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        jPanel2.removeAll();
+        Employee employee = new Employee();
+        jPanel2.add(employee, BorderLayout.CENTER);
+        SwingUtilities.updateComponentTreeUI(employee);
+        resetLabel();
+        jLabel4.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 18));
+    }//GEN-LAST:event_jLabel4MouseClicked
+
+    private void jLabel3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel3MouseEntered
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        jPanel2.removeAll();
+        Supplier supplier = new Supplier();
+        jPanel2.add(supplier, BorderLayout.CENTER);
+        SwingUtilities.updateComponentTreeUI(supplier);
+        resetLabel();
+        jLabel3.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 18));
+    }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+        SignIn signin = new SignIn();
+        signin.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel5MouseClicked
 
     /**
      * @param args the command line arguments
@@ -145,6 +211,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
